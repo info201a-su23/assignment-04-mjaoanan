@@ -34,8 +34,14 @@ Feel free to calculate and report values that you find relevant. Again, remember
 ### The Dataset
 
 Who collected the data?\
+
+##The specific source or organization that collected this dataset was not mentioned in the initial information provided. However, such datasets are usually collected by governmental agencies, research institutions, or other relevant organizations concerned with criminal justice and public policy. 
+
 How was the data collected or generated?\
-Why was the data collected?\
+
+##Why was the data collected?\
+The purpose of collecting this data is likely to monitor and analyze trends in incarceration rates over time, assess the impact of criminal justice policies, and inform policymaking decisions.
+
 How many observations (rows) are in your data?\
 How many features (columns) are in the data?\
 What, if any, ethical questions or questions of power do you need to consider when working with this data?\
