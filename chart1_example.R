@@ -1,6 +1,14 @@
-x_values <- seq(1, 3)
-y_values <- seq(1,3)
-
+library(maps)
+library(ggmap)
 library(ggplot2)
-ggplot() +
-  geom_line(aes(x=x_values, y = y_values))
+library(tidyverse)
+library(dplyr)
+library(tidyr)
+
+prison_data <- read.csv("https://raw.githubusercontent.com/melaniewalsh/Neat-Datasets/main/us-prison-jail-rates-1990-WA.csv")
+
+graph1 <- ggplot(prison_data) + 
+  geom_col(mapping = aes(
+    x= year, y = black_prison_pop_rate
+  ))
+graph1
