@@ -1,5 +1,5 @@
 ---
-title: "A3: Incarceration"
+title: "A4: Incarceration"
 output: html_document
 ---
 
@@ -8,79 +8,77 @@ source("summary.R")
 knitr::opts_chunk$set(echo= TRUE)
 ```
 
-
 ### Introduction
 
-An introduction of the problem domain and a description of the variable(s) you are choosing to analyze (and why!)
-
-```{r}
-KingCountyMaxVal
-```
-
-# The highest recorded number of AAPI imprisonment was `r KingCountyMaxVal`
+The primary emphasis of my investigation will be on contrasting the incarceration rates of black and white populations. The objective is to shed light on how systemic racism persists in contemporary America, with a particular emphasis on how the white patriarchy contributes to this problem. I will look at the highest type of race across a wide range of years and county, to see who is the highest. Additionally, there is an emphasizes on the percentage/ratio amount of color people to white people to highlight the contacts racism that occur within the current justice system.
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
-
-These will likely be calculated using your DPLYR skills, answering questions such as: 
-
--   What is the average value of my variable across all the counties (in the current year)?
--   Where is my variable the highest / lowest?
--   How much has my variable change over the last N years?
-
-Feel free to calculate and report values that you find relevant. Again, remember that the purpose is to think about how these measure of incarceration vary by race.
+Starting from the 1990 to the 2018, the highest rate of people in prison was in `r highest_number_of_prisonners` and at this time `r highest_number_of_black_prisonners` was the rate of black people. And at this time there were `r white_at_the_time` This is `r percentage` :1 ratio, or 1473% more than blacks.
 
 ### The Dataset
 
-Who collected the data?\
+#### Who collected the data?
 
-##The specific source or organization that collected this dataset was not mentioned in the initial information provided. However, such datasets are usually collected by governmental agencies, research institutions, or other relevant organizations concerned with criminal justice and public policy. 
+> Vera Institute of Justice
 
-How was the data collected or generated?\
+#### How was the data collected or generated?
 
-##Why was the data collected?\
-The purpose of collecting this data is likely to monitor and analyze trends in incarceration rates over time, assess the impact of criminal justice policies, and inform policymaking decisions.
+> Vera built the data-set with the help of the National Corrections Reporting Program (NCRP), managed by the Bureau of Justice Statistics since 1983. It includes detailed individual-level incarceration data such as charges, demographics, prison entry and exit dates, and the originating county of the incarcerated person.
 
-How many observations (rows) are in your data?\
-How many features (columns) are in the data?\
-What, if any, ethical questions or questions of power do you need to consider when working with this data?\
+#### Why was the data collected?
+
+> The purpose of collecting this data is likely to monitor and analyze trends in incarceration rates over time, assess the impact of criminal justice policies, and inform policy making decisions.
+
+How many observations (rows) are in your data?
+
+> There are 1131 obs in the data
+
+\
+How many features (columns) are in the data?
+
+> There are 23 variables
+
+\
+What, if any, ethical questions or questions of power do you need to consider when working with this data?
+
+> How has the information provide by this data used?
+
+\
 What are possible limitations or problems with this data? (at least 200 words)
+
+> One limitation I see from this data is that most people are in prison for a long time, so they are capture in every year. We need to understand that it does not represent the reason why people are in prison but just who they are by race. There is a lot that goes into creating policies, this data set can be a driving force but there should be addition evidences and analysis that is concurrent with the finding presented in this data.
 
 ### Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+#### Washington black population rate from 1980 to 2018
 
-The first chart that you will create and include will show the trend over time of your variable/topic. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
+```{r, echo = FALSE, message=FALSE, warning=FALSE} 
+source("chart1_example.R") 
+graph1
+```
 
--   Show more than one, but fewer than \~10 trends
-    -   This may mean showing the same measure for different locations or different racial groups. Think carefully about a meaningful comparison of locations (e.g., the top 10 counties in a state, top 10 states, etc.)
--   You must have clear x and y axis labels
--   The chart needs a clear title 
--   You need a legend for your different line colors and a clear legend title
+This chart represent the rate of the black population that is currently in prison. I choose this graph to represent the constant high rate representing people of color in prison. As shown in this graph, the rate started at low and then increases after a year then steady out at around the same amount. Due to the consistence of the graph, we know that the issues of incarceration rate for people of color hasn't change over the past 30 years.  
 
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-\`\`\``{r, echo = FALSE, code = readLines("chart1_example.R")}`
 
 ### Variable Comparison Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+#### Washington State black prison rate vs white prison rate
 
-The second chart that you will create and include will show how two different (continuous) variables are related to one another. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
+```{r, echo = FALSE, message=FALSE, warning=FALSE} 
+source("chart2_example.R") 
+comparisonGraph
+```
 
--   You must have clear x and y axis labels
--   The chart needs a clear title 
--   If you choose to add a color encoding (not required), you need a legend for your different color and a clear legend title
+This rate compares the previous graph with an additional race. This graph is chosen to give context on the current trend of people of color. As you can see, white prison population rate is extremely low compare to blacks. 
 
 ### Map
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+#### Black prison population rate in 2016 across Washington County.
 
-The last chart that you will create and include will show how a variable is distributed geographically. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
+```{r, echo = FALSE, message=FALSE, warning=FALSE} 
+source("map_example.R") 
+county_map_plot
+```
 
--   Your map needs a title
--   Your color scale needs a legend with a clear label
--   Use a map based coordinate system to set the aspect ratio of your map
+This map was chosen to represent the wide spread of the problem. As shown in the graph, people of color are not treated equally across washington state.
